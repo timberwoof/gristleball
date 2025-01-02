@@ -14,7 +14,7 @@ This is a very simple model of monthly income from an apartment block.
 # We need to import the distributions we will use in the model.
 # In this example we will use one linear distribution and one triangular.
 # If your model uses more distributions, add them here.
-from gbDistributions import linear
+from gbDistributions import uniform
 from gbDistributions import triangular
 
 # Required import.
@@ -34,7 +34,7 @@ class model:
 
         # occupancy could be anywhere between 80% and 100%
         # with an equal likelihood of any level of occupancy.
-        self.occupancy = linear(0.8, 1.0)
+        self.occupancy = uniform(0.8, 1.0)
 
         # We try to rent units at a fair rate, $200/month
         # but sometimes we give breaks to people

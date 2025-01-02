@@ -7,10 +7,13 @@ clearview.py: example of how to use Gristleball with more distributions.
 # to point to y our model file, for example
 # from clesrview import model
 
+# Ganked from "Crystal Ball Version 3.0: Forecasting ans Risk Analysis for Sporeadsheet Users",
+# Decisioneering, Inc, 1993
+
 # We need to import the distributions we will use in the model.
-# In this example we will use one linear distribution and one triangular.
+# In this example we will use one uniform distribution and one triangular.
 # If your model uses more distributions, add them here.
-from gbDistributions import linear
+from gbDistributions import uniform
 from gbDistributions import custom
 from gbDistributions import triangular
 from gbDistributions import binomial
@@ -29,7 +32,7 @@ class model:
 
         # Costs ($M)
         self.development_costs = 10 # C4
-        self.test_costs = linear(3, 5) # C5
+        self.test_costs = uniform(3, 5) # C5
         self.marketing_costs = 16 # C6
 
         # Drug Test
@@ -38,7 +41,7 @@ class model:
 
         # Market Study
         self.personsWithNearsightedness = 40 # C14
-        self.growthRate = custom(0.2) # C15
+        self.growthRate = custom([[-.15, -.05, .25], [0, .05, .75]]) # C15
 
         # market penetration
         self.marketPenetration = normal(0.08, 0.02) #C19
