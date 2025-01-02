@@ -5,7 +5,7 @@
 # *** Modify "example" in this line to point to your model
 # *** Run this file:
 # python3 gbIterator.py
-from example import model
+from clearview import model
 
 # The rest of this code is usable as-is.
 from gbResult import result
@@ -17,11 +17,12 @@ def main():
     i = 0
     while i < theModel.iterations:
         # Here's where your model gets called and the result tallied.
-        theModel.result.put(theModel.calculate())
+        theModel.calculate()
         i = i + 1
 
-    # And here's where the graph gets made
-    theModel.result.plot()
+    # And here's where the graphs get made
+    for result in theModel.results:
+        result.plot()
 
 if __name__ == "__main__":
     main()

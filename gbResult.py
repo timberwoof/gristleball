@@ -1,10 +1,11 @@
 """Result class for Gristleball"""
+# This object knows about only one set of results.
 # Instantiate one of these for every result you expect from your model.
 from matplotlib import pyplot as plt  # python3 -m pip install -U matplotlib
 import math
 
 class result:
-    def __init__(self, title, labelX, num_bins):
+    def __init__(self, title, labelX, num_bins=100):
         print (f"gbResult init({title}, {labelX}, {num_bins})")
         self.title = title
         self.labelX = labelX
@@ -19,7 +20,7 @@ class result:
         """create a graph of the histogram for this result"""
         # calculates the bin sizes and distributes the accumulated baliues into them
         # then calls pyplot to make a graph.
-        print('gbResult plot')
+        print(f'gbResult plot {self.title}')
 
         # create the graph
         plt.clf()
@@ -31,3 +32,6 @@ class result:
         plt.show()
         # print("gbResult plot saving plot to histogram")
         #fig.savefig("histogram", dpi=fig.dpi)
+
+if __name__ == "__main__":
+    print("Don't run this. Run gbIterator instead.")
