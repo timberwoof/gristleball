@@ -1,4 +1,4 @@
-from random import random
+import random
 
 class gbLinear:
     def __init__(self, xmin=0, xmax=1, ymax=1):
