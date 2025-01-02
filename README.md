@@ -1,6 +1,25 @@
 # gristleball
 Simple Monte Carlo Simulation in Python
 
+# Quick Start
+Run the example with 
+python3 gbIterator.py
+
+Make a backup of exmaple.py . 
+Edit example.py to suit your needs. 
+Run the modified file with 
+python3 gbIterator.py
+
+#Better Start
+Copy example.py to MyModel.Py. 
+Edit MyModel.Py to suit your needs.
+In Iterator.py modify the line
+from example import model
+ro
+from MyModel import model
+Run your model with 
+python3 gbIterator.py
+
 # Distribution Classes
 * linear (xmin, xmax, or xmean, xdeviation, y)
 * triangle (xmin, xcenter, xmax, y)

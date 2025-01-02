@@ -1,3 +1,7 @@
+"""Random distributions for Gristleball"""
+# Each of these provides one distribution types to feed your model.
+# You can instantiate as many of these as you need to.
+# You can add new distribution types to his file.
 import random
 
 class gbLinear:
