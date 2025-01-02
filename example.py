@@ -9,9 +9,12 @@ from gbDistributions import gbLinear
 from gbDistributions import gbTriangular
 from gbResult import result
 
-class example:
+class model:
     def __init__(self):
         """Define the inputs to the model we will calculate."""
+
+        # apartment block has 10 runits
+        self.units = 10
 
         # occupancy could be anywhere between 80% and 100%
         # with an equal likelihood of any level of occupancy.
@@ -22,12 +25,16 @@ class example:
         # and sometimes we charge more.
         self.rentalRate = gbTriangular(1800, 2200, 2400)
 
+        # for first version, we "manually" caluclate possible range of values
+        min = 0.8 * 1800 * 10
+        max = 1.0 * 2200 * 10
+
         # Here we set up where the calculations end up
-        self.result = result("Rental income", "Income", "#", 0, 100000, 100)
+        self.result = result("Rental income", "Income", "#", min, max, 100)
 
     def calculate(self):
         """Calculate the mathematical model for one set of inputs"""
 
         # This model is pretty simple. We multiply the two values
         # and give them back to the iterator.
-        return self.occupancy * self.rentalRate
+        return self.occupancy.value() * self.rentalRate.value() * self.units
