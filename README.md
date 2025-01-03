@@ -59,9 +59,6 @@ Each has
 
 # To Do
 * Make the user model library a parameter to the main class. 
-* Rename the main class to monte. 
 * Put everything else into a package or something. 
 * Test for required packages and give actually helpful instructions for what to do. 
-* Optionally output graphs to files. 
 * Error handling.
-* Minvalue and maxvalue limiters so the Crystal Ball example will give results like what are in the book. 
