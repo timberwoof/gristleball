@@ -1,5 +1,6 @@
 # gristleball
-Simple Monte Carlo Simulation in Python, which I really should have called Monte Python. Reference: "Crystal Ball Version 3.0: Forecasting and Risk Analysis for Sporeadsheet Users", Decisioneering, Inc, 1993
+Simple Monte Carlo Simulation in Python, which I really should have called Monte Python. 
+Reference: "Crystal Ball Version 3.0: Forecasting and Risk Analysis for Sporeadsheet Users", Decisioneering, Inc, 1993
 
 # Goals: Simplicity
 Requirements for use: 
@@ -8,6 +9,10 @@ Requirements for use:
 This project will provide:
 * Python classes that demonstrate mathematical models to analyze. 
 * Package that contains all the support classes
+
+# Compatibility and Pricing
+* Compatible with all platforms that can run Python 3, numpy, and Pyplot: Linux, MacOS, and Widnows.
+* Free as in Beer. 
 
 # Quick Start
 Run the example with 
@@ -47,7 +52,7 @@ Each has
 * grapher that creates the graphs from its results
 
 # Iterator Class (Monte)
-* This is the main program.
+* This is the main program. Run this. 
 * It calls your model class constructor.
 * It repeatedly calls your model class calculator.
 * When it's done, it calls the result classes to create the graphs. 
