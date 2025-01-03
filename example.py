@@ -54,4 +54,4 @@ class model:
         self.result.put(self.occupancy.value() * self.rentalRate.value() * self.units)
 
 if __name__ == "__main__":
-    print("Don't run this. Run gbIterator instead.")
+    print("Don't run this. Run python3 monte example instead.")

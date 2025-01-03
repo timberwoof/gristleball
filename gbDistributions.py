@@ -2,6 +2,10 @@
 # Each of these provides one distribution types to feed your model.
 # You can instantiate as many of these as you need to.
 # You can add new distribution types to his file.
+#
+# Every class must have the methods
+# # __init__ that takes the parameters for the distribution
+# value() that returns one value
 import random
 import numpy
 
@@ -24,6 +28,15 @@ class triangular:
     def value(self):
         return random.triangular(self.low, self.high, self.mode)
 
+class normal:
+    def __init__(self, mean, stdDev):
+        print(f'initializing normal(mean={mean}, stdDev={stdDev})')
+        self.mean = mean
+        self.stdDev = stdDev
+
+    def value(self):
+        return numpy.random.normal(self.mean, self.stdDev)
+
 class binomial:
     def __init__(self, prob=0.5, trials=100):
         print(f'initializing binomial(prob={prob}, trials={trials})')
@@ -38,9 +51,14 @@ class custom:
     # Each block is defined by its min, max, and probability.
     # The min and max values live on the same X axis for all the blocks.
     # The Probability values are scaled relatively between the blocks.
+    #
     # The data structure looks like [[0.0, 0.05, 0.75], [-0.15, -0.05, 0.25]]
     # The first two parameters are the limits for this range.
     # The third parameter Prob is the probability that the value will be in this range.
+    # We don't care what order the blocks are in.
+    #
+    # Crystal Ball 3.0 allowed you to specify the Y values for the start and end of each range.
+    # This does not. If you need that, please write it up and submit it as optional parameters to __init__.
 
     def __init__(self, prob_list):
         # The parameters given by the user are somehat flexible so we do some cleanup.
@@ -55,7 +73,7 @@ class custom:
             probs_sum = probs_sum + prob
         normalize_factor = 1.0 / probs_sum
 
-        # Now normalize each block's probability
+        # Normalize each block's probability
         # and store them in a new list with probability ranges
         self.normalized = []
         min = 0
@@ -68,7 +86,6 @@ class custom:
             min = max
 
         # Now each row has the min and max values and the threshold for picking it
-        # We don't care what order the blocks are in.
         print(f'done initializing custom({self.normalized})')
 
     def value(self):
@@ -84,14 +101,45 @@ class custom:
             # then you should rewrite this whole thing in C.
         return random.uniform(xmin, xmax)
 
-class normal:
-    def __init__(self, mean, stdDev):
-        print(f'initializing normal(mean={mean}, stdDev={stdDev})')
-        self.mean = mean
-        self.stdDev = stdDev
+class min():
+    """Limit a distribution's minimum value"""
+    # define your function as min calling the distribution:
+    # self.a_distribution = min(normal(8, 2), 4)  # C19
+    # and call it as usual:
+    # self.a_distribution.value()
+    # The iteration limit of 10 is arbitrary.
+
+    def __init__(self, distribution, mininmum=0):
+        self.distribution = distribution
+        self.mininmum = mininmum
 
     def value(self):
-        return numpy.random.normal(self.mean, self.stdDev)
+        value = self.distribution.value()
+        iterations = 0
+        while value < self.mininmum and iterations < 10:
+            value = self.distribution.value()
+            iterations = iterations + 1
+        return value
+
+class max():
+    """Limit a distribution's maximum value"""
+    # define your function as max calling the distribution:
+    # self.a_distribution = max(normal(8, 2), 12)  # C19
+    # and call it as usual:
+    # self.a_distribution.value()
+    # The iteration limit of 10 is arbitrary.
+
+    def __init__(self, distribution, maximum=0):
+        self.distribution = distribution
+        self.maximum = maximum
+
+    def value(self):
+        value = self.distribution.value()
+        iterations = 0
+        while value > self.maximum and iterations < 10:
+            value = self.distribution.value()
+            iterations = iterations + 1
+        return value
 
 if __name__ == "__main__":
-    print("Don't run this. Run gbIterator instead.")
+    print("Don't run this. Run python3 monte instead.")

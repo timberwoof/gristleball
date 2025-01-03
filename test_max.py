@@ -1,8 +1,9 @@
 """
-test_normal.py: test the Custom distribution.
+test_max.py: test the maximum function.
 """
 
 from gbDistributions import normal
+from gbDistributions import max
 
 # Required import.
 from gbResult import result
@@ -10,8 +11,8 @@ from gbResult import result
 class model:
     def __init__(self):
         self.iterations = 10000
-        self.normal = normal(10,3)
-        self.result = result("normal Distribution", "normal Distribution", 100)
+        self.normal = max(normal(10,3),13)
+        self.result = result("normal Distribution with Maximum", "normal Distribution with Maximum", 100)
         self.results = [self.result]
 
     def calculate(self):

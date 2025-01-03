@@ -4,8 +4,8 @@
 # *** this needs to import your specific model class
 # *** Modify "example" in this line to point to your model
 # *** Run this file:
-# python3 gbIterator.py
-from test_binomial import model
+# python3 monte.py
+from clearview import model
 
 # The rest of this code is usable as-is.
 from gbResult import result

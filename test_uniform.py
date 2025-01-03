@@ -18,4 +18,4 @@ class model:
         self.result.put(self.uniform.value())
 
 if __name__ == "__main__":
-    print("Don't run this. Run gbIterator instead.")
+    print("Don't run this. Run python3 monte test_uniform instead.")
