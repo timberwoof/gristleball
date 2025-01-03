@@ -3,10 +3,11 @@ Simple Monte Carlo Simulation in Python, which I really should have called Monte
 
 # Goals: Simplicity
 Requirements for use: 
-Be able to write a mathematical evaluation in Python
+* Be able to write a mathematical evaluation in Python.
 
-Supply: sample main program with sample calculator classes
-Package that contains all the support classes
+Supply: 
+* sample main program with sample calculator classes
+* Package that contains all the support classes
 
 # Quick Start
 Run the example with 
@@ -52,15 +53,15 @@ Each has
 * calculator function gets called a zillion times by the iterator. It calls the distribution functions for values, calculates the results, and returns list results of to the iterator. You should write this to be efficient. 
 
 # Required libraries
-random
-numpy
-pyplot
+* random
+* numpy
+* pyplot
 
 # To Do
-Make the user model library a parameter to the main class. 
-Rename the main class to monte. 
-Put everything else into a package or something. 
-Test for required packages and give actually helpful instructions for what to do. 
-Optionally output graphs to files. 
-Error handling.
-Minvalue and maxvalue limiters so the Crystal Ball example will give results like what are in the book. 
+* Make the user model library a parameter to the main class. 
+* Rename the main class to monte. 
+* Put everything else into a package or something. 
+* Test for required packages and give actually helpful instructions for what to do. 
+* Optionally output graphs to files. 
+* Error handling.
+* Minvalue and maxvalue limiters so the Crystal Ball example will give results like what are in the book. 
