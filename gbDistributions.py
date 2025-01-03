@@ -1,10 +1,11 @@
 """Random distributions for Gristleball"""
 # Each of these provides one distribution types to feed your model.
 # You can instantiate as many of these as you need to.
-# You can add new distribution types to his file.
+# Sure, you can add new distribution types to his file.
+# Please submit them to the GitHub project along with a test class.
 #
-# Every class must have the methods
-# # __init__ that takes the parameters for the distribution
+# Every distribution class must have the methods
+# __init__ that takes the parameters for the distribution
 # value() that returns one value
 import random
 import numpy

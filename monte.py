@@ -11,7 +11,7 @@ from clearview import model
 from gbResult import result
 
 def main():
-    print("main")
+    print("monte python")
     # This is where your mathematical model gets incorporated.
     theModel = model() # parameters are set up in user's __init__
     i = 0

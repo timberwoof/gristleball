@@ -8,7 +8,7 @@ This is a very simple model of monthly income from an apartment block.
 # Write your Calculate function the way you want it.
 # In gbIterator, edit the line
 # from example import model
-# to point to y our model file, for example
+# to point to your model file, for example
 # from myModel import model
 
 # We need to import the distributions we will use in the model.

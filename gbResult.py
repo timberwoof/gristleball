@@ -2,7 +2,6 @@
 # This object knows about only one set of results.
 # Instantiate one of these for every result you expect from your model.
 from matplotlib import pyplot  # python3 -m pip install -U matplotlib
-import math
 
 class result:
     def __init__(self, title, labelX, num_bins=100):

@@ -4,8 +4,8 @@ clearview.py: example of how to use Gristleball with more distributions.
 
 # In gbIterator, edit the line
 # from example import model
-# to point to y our model file, for example
-# from clesrview import model
+# to point to your model file, for example
+# from clearview import model
 
 # This example is borrowed from
 # "Crystal Ball Version 3.0: Forecasting and Risk Analysis for Sporeadsheet Users",
