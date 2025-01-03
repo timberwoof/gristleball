@@ -1,5 +1,5 @@
 """
-testnormal.py: test the Custom distribution.
+test_normal.py: test the Custom distribution.
 """
 
 from gbDistributions import normal

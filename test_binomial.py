@@ -1,8 +1,8 @@
 """
-testuniform.py: test the Custom distribution.
+test_binomial.py: test the Custom distribution.
 """
 
-from gbDistributions import uniform
+from gbDistributions import binomial
 
 # Required import.
 from gbResult import result
@@ -10,12 +10,12 @@ from gbResult import result
 class model:
     def __init__(self):
         self.iterations = 10000
-        self.uniform = uniform(2,5)
-        self.result = result("Uniform Distribution", "Uniform Distribution", 100)
+        self.binomial = binomial(.5,100)
+        self.result = result("binomial Distribution", "binomial Distribution", 100)
         self.results = [self.result]
 
     def calculate(self):
-        self.result.put(self.uniform.value())
+        self.result.put(self.binomial.value())
 
 if __name__ == "__main__":
     print("Don't run this. Run gbIterator instead.")

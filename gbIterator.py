@@ -5,7 +5,7 @@
 # *** Modify "example" in this line to point to your model
 # *** Run this file:
 # python3 gbIterator.py
-from testbinomial import model
+from test_binomial import model
 
 # The rest of this code is usable as-is.
 from gbResult import result
